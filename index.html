@@ -51,7 +51,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky sticky-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="index-2.html">
                 <img src="images/zooki.png" alt="" height="20">
             </a>
         </div>
@@ -66,10 +66,10 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5">
                             <div class="mt-40 home-2-content">
-                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Chuyển Hướng </h1>
-                                <p class="text-white-70 mt-4 f-15 mb-0">Đang chuyển hướng tới: thebao.me</p>
-                                <div class="mt-5">
-                                    <a href="http://thebao.me/" class="btn btn-custom mr-4">Chuyển Ngay</a>
+                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Chuyển Hướng</h1>
+                                <p class="text-white-70 mt-4 f-15 mb-0" id="redirectTo">Đang chuyển hướng tới: thebao.me</p>
+                                <div class="mt-5" id="goNow">
+                                    <a href="#" class="btn btn-custom mr-4" id="urlgoNow">Chuyển Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -109,11 +109,32 @@
 
             $("#owl-demo").owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
-
                 items: 2,
                 itemsDesktop: [1199, 2],
                 itemsDesktopSmall: [979, 2]
 
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            $('#redirectTo').text('Đang load URL, xin chờ 1 tí ...');
+            $('#goNow').hide();
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var code = url.searchParams.get("i");
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbwUL8VigLf_3QJSlG_RQBu2k-17zL0R0VeA38lg0yxdNylcabkH/exec?type=2&url=' + code,
+                type: 'GET',
+                success: function(resp){
+                    if (resp.length > 1) {
+                        $('#redirectTo').text('Chuyển hướng tới: ' + resp);
+                        $('#urlgoNow').attr('href', resp);
+                        $('#goNow').show();
+                    } else {
+                        $('#redirectTo').text('Code không tồn tại URL.');
+                    }
+                },
             });
         });
     </script>
