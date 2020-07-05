@@ -174,7 +174,7 @@
                 url: 'https://script.google.com/macros/s/AKfycbwUL8VigLf_3QJSlG_RQBu2k-17zL0R0VeA38lg0yxdNylcabkH/exec?type=69&url=' + url2,
                 type: 'GET',
                 success: function(resp){
-                    if (resp.length > 1) {
+                    if (resp.length > 4) {
                         $('#urlneedShort').val('https://chuyenhuong.github.io/?i=' + resp);
                         $('#urlneedShort').attr('readonly', 'readonly');
                     } else {
@@ -183,6 +183,16 @@
                 },
             });
         });
+        console.log(ValidURL('hello'));
+        console.log(ValidURL('https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url'));
+        function ValidURL(str) {
+          var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+          if(!regex .test(str)) {
+            return false;
+          } else {
+            return true;
+          }
+        }
     </script>
 
 </body>
