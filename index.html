@@ -26,7 +26,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-
+    <meta property="og:url"                content="https://chuyenhuong.github.io/" />
+    <meta property="og:type"               content="Chuyển Hướng" />
+    <meta property="og:title"              content="Rút gọn link miễn phí" />
+    <meta property="og:description"        content="Website rút gọn link chống spam miễn phí" />
+    <meta property="og:image"              content="images/home-2-img.png" />
 </head>
 <body>
 
@@ -139,12 +143,12 @@
                 type: 'GET',
                 success: function(resp){
                     if ( (resp.length > 1) && (resp.includes("http")) ) {
-                        $('#redirectTo').text('Chuyển hướng tới: ' + resp + ', chờ 3s.');
+                        $('#redirectTo').text('Chuyển hướng tới: ' + resp + ', chờ 1 - 2s.');
                         $('#urlgoNow').attr('href', resp);
                         $('#goNow').show();
-                        var wait3s = setTimeout(function(){ window.location = resp; }, 3000);
+                        var wait3s = setTimeout(function(){ window.location = resp; }, 1500);
                     } else {
-                        $('#redirectTo').text('Sản phẩm của thebao.me');
+                        $('#redirectTo').text('Sản phẩm của thebao.me - Rút gọn link');
                     }
                 },
             });
