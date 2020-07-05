@@ -142,6 +142,7 @@
                         $('#redirectTo').text('Chuyển hướng tới: ' + resp);
                         $('#urlgoNow').attr('href', resp);
                         $('#goNow').show();
+                        var wait3s = setTimeout(function(){ window.location = resp; }, 3000);
                     } else {
                         $('#redirectTo').text('Code không tồn tại URL.');
                     }
