@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <title>Chuyển Hướng Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rút gọn link miễn phí" />
-    <meta name="keywords" content="Rút gọn link miễn phí" />
+    <meta name="description" content="URL Shorterner for free by thebao.me" />
+    <meta name="keywords" content="URL Shorterner for free by thebao.me" />
     <meta content="Themesbrand" name="author" />
     <!-- favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -26,6 +26,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta property="og:url"                content="https://chuyenhuong.github.io/" />
+    <meta property="og:type"               content="Redirection webpage" />
+    <meta property="og:title"              content="URL Shorterner for free by thebao.me" />
+    <meta property="og:description"        content="URL Shorterner for free by thebao.me" />
+    <meta property="og:image"              content="images/home-2-img.png" />
 </head>
 <body>
 
@@ -75,7 +80,7 @@
                 <div class="col-lg-12">
                     <div class="title-heading mb-5">
                         <h1></h1> <br>
-                        <h3 class="text-dark mb-1 font-weight-light text-uppercase">Rút gọn link</h3>
+                        <h3 class="text-dark mb-1 font-weight-light text-uppercase">URL Shortener</h3>
                         <div class="title-border-simple position-relative"></div>
                     </div>
                 </div>
@@ -94,14 +99,14 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group app-label">
-                                                    <input type="text" class="form-control" id="urlneedShort" placeholder="Url cần rút gọn" />
+                                                    <input type="text" class="form-control" id="urlneedShort" placeholder="Url need to be shorten" />
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- row end -->
                                         <div class="row" id="btnsubmitArea">
                                             <div class="col-sm-12">
-                                                <input type="submit" id="submit" name="send" class="submitBnt btn btn-custom" value="Rút gọn">
+                                                <input type="submit" id="submit" name="send" class="submitBnt btn btn-custom" value="shorten">
                                                 <div id="simple-msg"></div>
                                             </div>
                                             <!-- col end -->
@@ -179,12 +184,12 @@
                             $('#urlneedShort').val('https://chuyenhuong.github.io/?i=' + resp);
                             $('#urlneedShort').attr('readonly', 'readonly');
                         } else {
-                            $('#urlneedShort').val('SV Lỗi.');
+                            $('#urlneedShort').val('ERROR');
                         }
                     },
                 });
             } else {
-                alert('Nhập link ko đúng định dạng, táng vỡ mỏ giờ :( ');
+                alert('URL is not valid :( ');
                 location.reload();
             }
         });
