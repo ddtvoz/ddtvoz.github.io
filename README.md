@@ -1,4 +1,5 @@
-# chuyenhuong.github.io
+# Rút gọn link bằng HTML + Js
+
 Sử dụng Google Script làm API
 1. Đổi <IDsheet> trong code.gs và tạo Google App Script copy dán vào và deploy thành webapp.
 
