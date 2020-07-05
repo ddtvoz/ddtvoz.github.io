@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <title>Chuyển Hướng Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rút gọn link miễn phí" />
-    <meta name="keywords" content="Rút gọn link miễn phí" />
+    <meta name="description" content="URL Shorterner for free by thebao.me" />
+    <meta name="keywords" content="URL Shorterner for free by thebao.me" />
     <meta content="Themesbrand" name="author" />
     <!-- favicon -->
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -27,9 +27,9 @@
     <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta property="og:url"                content="https://chuyenhuong.github.io/" />
-    <meta property="og:type"               content="Chuyển Hướng" />
-    <meta property="og:title"              content="Rút gọn link miễn phí" />
-    <meta property="og:description"        content="Website rút gọn link chống spam miễn phí" />
+    <meta property="og:type"               content="Redirection webpage" />
+    <meta property="og:title"              content="URL Shorterner for free by thebao.me" />
+    <meta property="og:description"        content="URL Shorterner for free by thebao.me" />
     <meta property="og:image"              content="images/home-2-img.png" />
 </head>
 <body>
@@ -81,8 +81,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5">
                             <div class="mt-40 home-2-content">
-                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Chuyển Hướng</h1>
-                                <p class="text-white-70 mt-4 f-15 mb-0" id="redirectTo">Sản phẩm của thebao.me - Rút gọn link</p>
+                                <h1 class="text-white font-weight-normal home-2-title display-4 mb-0">Redirection</h1>
+                                <p class="text-white-70 mt-4 f-15 mb-0" id="redirectTo">Product of thebao.me - URL Shortener</p>
                                 <div class="mt-5" id="goNow" style="display: none;">
                                     <a href="#" class="btn btn-custom mr-4" id="urlgoNow">Chuyển Ngay</a>
                                 </div>
@@ -143,12 +143,12 @@
                 type: 'GET',
                 success: function(resp){
                     if ( (resp.length > 1) && (resp.includes("http")) ) {
-                        $('#redirectTo').text('Chuyển hướng tới: ' + resp + ', chờ 1 - 2s.');
+                        $('#redirectTo').text('Redirecting to: ' + resp + ', chờ 1 - 2s.');
                         $('#urlgoNow').attr('href', resp);
                         $('#goNow').show();
                         var wait3s = setTimeout(function(){ window.location = resp; }, 1500);
                     } else {
-                        $('#redirectTo').text('Sản phẩm của thebao.me - Rút gọn link');
+                        $('#redirectTo').text('Product of thebao.me - URL Shortener');
                     }
                 },
             });
