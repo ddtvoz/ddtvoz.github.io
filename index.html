@@ -138,13 +138,13 @@
                 url: 'https://script.google.com/macros/s/AKfycbwUL8VigLf_3QJSlG_RQBu2k-17zL0R0VeA38lg0yxdNylcabkH/exec?type=2&url=' + code,
                 type: 'GET',
                 success: function(resp){
-                    if (resp.length > 1) {
-                        $('#redirectTo').text('Chuyển hướng tới: ' + resp);
+                    if ( (resp.length > 1) && (resp.includes("http")) ) {
+                        $('#redirectTo').text('Chuyển hướng tới: ' + resp + ', chờ 3s.');
                         $('#urlgoNow').attr('href', resp);
                         $('#goNow').show();
                         var wait3s = setTimeout(function(){ window.location = resp; }, 3000);
                     } else {
-                        $('#redirectTo').text('Code không tồn tại URL.');
+                        $('#redirectTo').text('Sản phẩm của thebao.me');
                     }
                 },
             });
